@@ -5,74 +5,189 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurante Educativo</title>
     <style>
-        /* Estilos generales */
+        /* Estilos Generales */
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
         }
 
         header {
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
         }
 
-        header h1 {
-            margin: 0;
+        /* Logo */
+        .logo img {
+            height: 50px;
         }
 
-        /* Estilo del botón de perfil */
-        .auth-buttons {
-            display: flex;
-            gap: 10px;
-        }
-
+        /* Botones de inicio de sesión y registro */
         .auth-buttons a {
             color: white;
             text-decoration: none;
+            margin-left: 15px;
             background-color: #444;
-            padding: 5px 10px;
+            padding: 10px 15px;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
         }
 
         .auth-buttons a:hover {
             background-color: #555;
         }
 
-        /* Estilo de la sección principal */
-        main {
+        /* Menú de navegación */
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Sección del carrusel de imágenes */
+        .carousel {
+            width: 100%;
+            height: 25vh;
+            background-size: cover;
+            background-position: center;
+            animation: changeBackground 15s infinite;
+        }
+
+        @keyframes changeBackground {
+            0% { background-image: url('img1.jpg'); }
+            20% { background-image: url('img2.jpg'); }
+            40% { background-image: url('img3.jpg'); }
+            60% { background-image: url('img4.jpg'); }
+            80% { background-image: url('img5.jpg'); }
+            100% { background-image: url('img1.jpg'); }
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 20px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
             padding: 20px;
         }
 
-        /* Estilos de la descripción general */
-        .description {
-            margin: 20px 0;
+        .footer-column {
+            width: 30%;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .footer-column ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Segunda sección del footer */
+        .footer-bottom {
+            text-align: right;
+            padding: 10px 20px;
+            background-color: #111;
+            color: #ccc;
+        }
+
+        .footer-bottom a {
+            color: #ccc;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <!-- Encabezado con título y botones de inicio de sesión -->
+    <!-- Header con logo y opciones de registro/inicio de sesión -->
     <header>
-        <h1>Restaurante Educativo</h1>
+        <div class="logo">
+            <img src="logo.png" alt="Logo del Restaurante">
+        </div>
         <div class="auth-buttons">
-            <a href="#">Crear perfil</a>
             <a href="#">Iniciar sesión</a>
+            <a href="#">Regístrate</a>
         </div>
     </header>
 
-    <!-- Contenido principal -->
-    <main>
-        <section class="description">
-            <h2>Descripción General</h2>
-            <p>El Restaurante Educativo del Centro de Comercio y Servicios de la Regional de Caldas es un espacio de aprendizaje en el que los estudiantes adquieren habilidades culinarias y de gestión. Este sistema permite gestionar el inventario de alimentos, las órdenes de compra, el control de desperdicios y las encuestas de satisfacción de los comensales.</p>
-        </section>
-    </main>
+    <!-- Menú de navegación -->
+    <nav>
+        <a href="#">Quiénes somos</a>
+        <a href="#">Nuestro producto</a>
+        <a href="#">Precios</a>
+        <a href="#">Servicio al cliente</a>
+    </nav>
+
+    <!-- Carrusel de imágenes -->
+    <div class="carousel"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Producto</h3>
+                <ul>
+                    <li><a href="#">Gestión de Inventario</a></li>
+                    <li><a href="#">Órdenes de Compra</a></li>
+                    <li><a href="#">Encuestas de Satisfacción</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Recursos</h3>
+                <ul>
+                    <li><a href="#">Documentación</a></li>
+                    <li><a href="#">Soporte Técnico</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contáctanos</h3>
+                <ul>
+                    <li><a href="#">Dirección: [Tu dirección aquí]</a></li>
+                    <li><a href="#">Correo: info@restaurante.com</a></li>
+                    <li><a href="#">Teléfono: (123) 456-7890</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <a href="#">Aviso de privacidad</a>
+            <a href="#">Condiciones de uso</a>
+            <span>Dirección: [Tu dirección aquí]</span>
+        </div>
+    </footer>
 
 </body>
 </html>
+
