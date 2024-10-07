@@ -25,7 +25,7 @@
         }
 
         header img {
-            height: 80px;
+            height: 80px;        
         }
 
         .form-container {
@@ -101,10 +101,22 @@
             color: red;
         }
 
-        .instructions {
+        .form-group .instructions {
             font-size: 12px;
             color: gray;
-            margin-top: -10px;
+            margin-top: 5px;
+            clear: both; /* This ensures the text does not overlap with the input field */
+        }
+
+        .form-group input[type="password"] {
+            width: calc(100% - 30px); /* Adjusts the width to give space for the eye icon */
+        }
+
+        .toggle-password {
+            cursor: pointer;
+            position: relative;
+            right: 30px;
+            top: -30px;
         }
     </style>
 </head>
