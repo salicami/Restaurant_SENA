@@ -3,192 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Tracker</title>
-    <link rel="icon" type="image/x-icon" href="food_tracker_favicon.ico">
+    <title>Food Tracker - Inicio</title>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        // Import Firebase SDK
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-analytics.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyARuIoy4abo18WABGJ84K-QYBkKt6hy2OU",
+            authDomain: "food-tracker-sena.firebaseapp.com",
+            projectId: "food-tracker-sena",
+            storageBucket: "food-tracker-sena.appspot.com",
+            messagingSenderId: "143569071865",
+            appId: "1:143569071865:web:0bc1b12307e2f72d1ebc28",
+            measurementId: "G-VHMQF5QF6S"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+
     <style>
-        /* Estilos Generales */
         body {
-            margin: 0;
             font-family: 'Poppins', sans-serif;
             background-color: #f4f4f4;
-        }
-
-        header {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            padding: 10px 20px;
-            background-color: #333;
-            color: white;
+            justify-content: center;
+            height: 100vh;
         }
 
-        /* Logo */
-        .logo img {
-            height: 50px;
-        }
-
-        /* Botones de inicio de sesión y registro */
-        .auth-buttons a {
-            color: white;
-            text-decoration: none;
-            margin-left: 15px;
-            background-color: #444;
-            padding: 10px 15px;
-            border-radius: 5px;
-        }
-
-        .auth-buttons a:hover {
-            background-color: #555;
-        }
-
-        /* Menú de navegación */
-        nav {
+        .auth-links {
             text-align: center;
-            margin: 20px 0;
+            margin-top: 20px;
         }
 
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
-
-        /* Sección del carrusel de imágenes */
-        .carousel {
-            width: 100%;
-            height: 75vh;
-            background-size: cover;
-            background-position: center;
-            animation: changeBackground 15s infinite;
-        }
-
-        @keyframes changeBackground {
-            0% { background-image: url('pexels-anntarazevich-7771980.jpg'); }
-            20% { background-image: url('DALL·E 2024-10-01 13.45.14.png'); }
-            40% { background-image: url('pexels-mdsnmdsnmdsn-1216348.jpg'); }
-            60% { background-image: url('pexels-shvets-production-8900089.jpg'); }
-            80% { background-image: url('pexels-shvetsa-12673998.jpg'); }
-            100% { background-image: url('DALL·E 2024-10-01 14.08.56.png'); }
-        }
-
-        /* Footer */
-        footer {
-            background-color: #222;
-            color: white;
-            padding: 20px 0;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-around;
-            padding: 20px;
-        }
-
-        .footer-column {
-            width: 30%;
-        }
-
-        .footer-column h3 {
-            margin-bottom: 15px;
-        }
-
-        .footer-column ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 10px;
-            color: white;
-        }
-
-        .footer-column ul li a {
-            text-decoration: none;
-            color: white;
-        }
-
-        .footer-column ul li a:hover {
-            text-decoration: underline;
-        }
-
-        /* Segunda sección del footer */
-        .footer-bottom {
-            text-align: right;
+        .auth-links a {
+            display: inline-block;
             padding: 10px 20px;
-            background-color: #111;
-            color: #ccc;
-        }
-
-        .footer-bottom a {
-            color: #ccc;
+            background-color: olive;
+            color: white;
+            border-radius: 5px;
             text-decoration: none;
-            margin-right: 20px;
+            margin: 10px;
+            font-size: 16px;
         }
 
-        .footer-bottom a:hover {
-            text-decoration: underline;
+        .auth-links a:hover {
+            background-color: darkolivegreen;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header con logo y opciones de registro/inicio de sesión -->
     <header>
-        <div class="logo">
-            <img src="Food_Tracker.png" alt="Logo del software">
-        </div>
-        <div class="auth-buttons">
-            <a href="login.html">Iniciar sesión</a>
-            <a href="registro.html">Regístrate</a>
-        </div>
+        <h1>Bienvenido a Food Tracker</h1>
     </header>
 
-    <!-- Menú de navegación -->
-    <nav>
-        <a href="#">Quiénes somos</a>
-        <a href="#">Nuestro producto</a>
-        <a href="#">Precios</a>
-        <a href="#">Servicio al cliente</a>
-    </nav>
-
-    <!-- Carrusel de imágenes -->
-    <div class="carousel"></div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>Producto</h3>
-                <ul>
-                    <li><a href="#">Gestión de Inventario</a></li>
-                    <li><a href="#">Órdenes de Compra</a></li>
-                    <li><a href="#">Encuestas de Satisfacción</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Recursos</h3>
-                <ul>
-                    <li><a href="#">Documentación</a></li>
-                    <li><a href="#">Soporte Técnico</a></li>
-                    <li><a href="https://centrocomerciocaldas.blogspot.com/" target="_blank">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Contáctanos</h3>
-                <ul>
-                    <li>Dirección: SENA-Centro de Comercio y Servicios-Regional Caldas Kilómetro 10 Vía al Magdalena</li>
-                    <li>Correo: cam10travel@gmail.com</li>
-                    <li>Teléfono: Bogotá: +(57) 601 7366060 Línea gratuita y resto del País: 018000 910270</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <a href="#">Aviso de privacidad</a>
-            <a href="#">Condiciones de uso</a>
-            <span>Dirección: Servicio Nacional de Aprendizaje SENA-Centro de Comercio y Servicios-Regional Caldas Kilómetro 10 Vía al Magdalena</span>
-        </div>
-    </footer>
+    <div class="auth-links">
+        <a href="registro.html">Regístrate</a>
+        <a href="login.html">Iniciar Sesión</a>
+    </div>
 
 </body>
 </html>
