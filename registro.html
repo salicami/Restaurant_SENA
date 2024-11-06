@@ -63,34 +63,42 @@
     </script>
 
     <style>
-        body {
+        /* Asegura que el contenido ocupe la altura completa de la pantalla y se ajuste bien */
+        html, body {
+            height: 100%;
+            margin: 0;
             font-family: 'Poppins', sans-serif;
-            background-color: #f4f4f4;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            background-color: #f4f4f4;
         }
 
+        /* Ajuste del header para centrar el logo */
         header {
             display: flex;
             justify-content: center;
-            padding: 10px 20px;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
-        /* Ajuste del tamaño del logo a 2.5 cm x 2.5 cm */
+        /* Logo ajustado a 2.5 cm x 2.5 cm */
         .logo img {
             width: 2.5cm;
             height: 2.5cm;
             cursor: pointer;
         }
 
+        /* Estilo de contenedor del formulario, con ancho máximo y ajuste centrado */
         .form-container {
             background-color: #ddd;
             padding: 30px;
             border-radius: 10px;
-            width: 400px;
+            width: 90%; /* Ajuste para pantallas pequeñas */
+            max-width: 400px; /* Ancho máximo en pantallas grandes */
+            box-sizing: border-box;
         }
 
         .form-group {
@@ -114,12 +122,24 @@
             border-color: blue;
         }
 
+        /* Botón de envío */
         .form-group input[type="submit"] {
             background-color: olive;
             color: white;
             padding: 10px;
             cursor: pointer;
             border-radius: 10px;
+        }
+
+        /* Mejora del espaciado para pantallas pequeñas */
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 20px;
+            }
+            .logo img {
+                width: 2cm; /* Tamaño más pequeño en pantallas pequeñas */
+                height: 2cm;
+            }
         }
     </style>
 </head>
@@ -133,7 +153,6 @@
 
 <div class="form-container">
     <form id="registerForm" onsubmit="registerUser(event)">
-        <!-- Campos del formulario de registro -->
         <div class="form-group">
             <label for="firstName">Primer Nombre</label>
             <input type="text" id="firstName" name="firstName" required>
